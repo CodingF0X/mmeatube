@@ -20,5 +20,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./dist/mmeatube/browser
+          cname: mmea.me
           personal_token: ${{ secrets.MMEA_PAT }}
           external_repository: CodingF0X/CodingF0X.github.io
