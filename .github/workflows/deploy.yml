@@ -1,0 +1,25 @@
+name: Deploy mmeatube to github.io
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mmeatube
+        uses: actions/checkout@v3
+
+      - name: Build Project
+        run: |
+          # Replace with your actual build command, e.g. npm install && npm run build
+          npm install
+          npm run build
+
+      - name: Deploy to CodingF0X.github.io
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          # If pushing to another repository:
+          # external_repository: CodingF0X/CodingF0X.github.io
