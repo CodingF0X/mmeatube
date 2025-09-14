@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {      
+body {
   background-color: #161d31;
 }
 
@@ -67,7 +67,7 @@ body {
 
 .latest:after,
 .latest:before {
-  content: " ";
+  content: ' ';
   display: block;
   border-bottom: 3px solid #fff;
 }
