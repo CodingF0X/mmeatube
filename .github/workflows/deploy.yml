@@ -19,6 +19,6 @@ jobs:
       - name: Deploy to CodingF0X.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./dist
+          publish_dir: ./dist/mmeatube
           personal_token: ${{ secrets.MMEA_PAT }}
           external_repository: CodingF0X/CodingF0X.github.io
