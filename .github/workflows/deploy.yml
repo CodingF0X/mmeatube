@@ -19,6 +19,7 @@ jobs:
       - name: Deploy to CodingF0X.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           personal_token: ${{ secrets.MMEA_PAT }}
           external_repository: CodingF0X/CodingF0X.github.io
