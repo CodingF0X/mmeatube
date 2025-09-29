@@ -1,4 +1,5 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, inject, signal, WritableSignal } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,10 @@ import { Component, signal, WritableSignal } from '@angular/core';
   styleUrl: './nav.css',
 })
 export class Nav {
-  modalOpened: WritableSignal<boolean> = signal(false);
+  modal = inject(ModalService);
 
-  openModal(e:MouseEvent){
-    this.modalOpened.set(!this.modalOpened())
+  openModal(e: Event) {
+    e.preventDefault();
+    this.modal.toggle('auth');
   }
 }

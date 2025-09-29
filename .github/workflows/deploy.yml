@@ -2,7 +2,7 @@ name: Deploy mmeatube to github.io
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build-deploy:

@@ -5,10 +5,13 @@ import { TabsContainer } from '../../shared/tabs-container/tabs-container';
 
 @Component({
   selector: 'app-auth-modal',
-  imports: [Modal,Tab,TabsContainer],
+  imports: [Modal, Tab, TabsContainer],
   templateUrl: './auth-modal.html',
-  styleUrl: './auth-modal.css'
+  styleUrl: './auth-modal.css',
 })
 export class AuthModal {
 
+  auth():string{
+    return "auth"
+  }
 }
