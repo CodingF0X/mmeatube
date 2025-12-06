@@ -1,0 +1,30 @@
+<div>
+  <input
+    [type]="inputType()"
+    class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+    [placeholder]="placeHolder()"
+    [formControl]="control()"
+  />
+  @if (control().touched && control().dirty) {
+    @if (control().hasError('required')) {
+      <p class="text-red-600">{{ inputType() }} field required!</p>
+    }
+    @if (control().hasError('minlength')) {
+      <p class="text-red-500">
+        Current length is: {{ control().getError('minlength').actualLength }} The required number of
+        characters is {{ control().getError('minlength').requiredLength }}
+      </p>
+    }
+    @if (control().hasError('email')) {
+      <p class="text-red-600">Enter some valid email !</p>
+    }
+
+    @if (control().hasError('pattern')) {
+      <p class="text-red-500">
+        - at least 8 characters <br/>
+        - must contain at least 1 uppercase letter, 1 lowercase letter
+        1 number - Can contain special characters
+      </p>
+    }
+  }
+</div>
